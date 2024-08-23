@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const { Sequelize } = require("sequelize");
 const userModel = require("./models/User");
+require("dotenv").config();
 const PORT = 8000;
+console.log(process.env.DB_USER);
+
 // Sequelize 연결 설정
 const sequelize = new Sequelize(
   process.env.DB_NAME,
